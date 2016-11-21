@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonConfirmation = (Button) findViewById(R.id.confirmationDialog);
         Button buttonSelection = (Button) findViewById(R.id.selectionDialog);
         Button buttonCustom = (Button) findViewById(R.id.customDialog);
+        Button buttonToast = (Button) findViewById(R.id.toast);
 
         buttonAlert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,DialogActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        buttonToast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Toast",Toast.LENGTH_LONG);
             }
         });
     }
